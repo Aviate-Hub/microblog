@@ -2,7 +2,7 @@
 # Created: 01/03/2022
 # Developer: Nitesh D
 # Last Modified: 01/03/2022
-
+from flask import render_template
 from app import app
 
 @app.route('/')
