@@ -3,7 +3,7 @@
 # Developer: Nitesh D
 # Last Modified: 01/03/2022
 
-from app import app
+from app import app, db
 from app.models import User, Post
 
 @app.shell_context_processor
