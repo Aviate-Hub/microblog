@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title>{{title}} - Flask Microblog</title>
-    {% else %}
-    <title>Welcome - Flask Microblog</title>
-    {% endif %}
-  </head>
-  <body>
+{% extends "base.html" %}
+
+{% block content %}
     <h1>Hello, {{user.username}}</h1>
     {% for post in posts %}
     <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
-  </body>
-</html>
+{% endblock %}
