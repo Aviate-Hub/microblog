@@ -1,5 +1,5 @@
 # Custom error handlers
-from flask import render_templates
+from flask import render_template
 from app import app, db
 
 @app.errorhandler(404)
