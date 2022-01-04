@@ -62,7 +62,7 @@ def logout():
 
 
 # User registration view function
-@app.route('/register', method=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
