@@ -68,3 +68,6 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 [parameters: ('nitesh2', "Welcome to my blog!Pay attention to the clever conditional I'm using to make sure that the Edit link appears when you are viewing your own p", 1)]
 (Background on this error at: https://sqlalche.me/e/14/gkpj)
 2022-01-04 15:17:01,009 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
+2022-01-05 14:10:06,531 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
+2022-01-05 14:12:04,451 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
+2022-01-05 14:14:40,265 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
