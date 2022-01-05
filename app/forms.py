@@ -6,6 +6,8 @@ from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Le
 from app.models import User
 
 # User login form
+
+
 class LoginForm(FlaskForm):
     username = StringField('Username:', validators=[DataRequired()])
     password = PasswordField('Password:', validators=[DataRequired()])
@@ -18,7 +20,8 @@ class RegistrationForm(FlaskForm):
     username = StringField('Username:', validators=[DataRequired()])
     email = StringField('Email:', validators=[DataRequired(), Email()])
     password = PasswordField('Password:', validators=[DataRequired()])
-    password2 = PasswordField('Repeat Password:', validators=[DataRequired(), EqualTo('password')])
+    password2 = PasswordField('Repeat Password:', validators=[
+                              DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
 
     # Check to see if username exists in DB
@@ -49,3 +52,8 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError('Please use a different username.')
+
+
+# Empty form for following and unfollowing
+class EmptyForm(FlaskForm):
+    submit = SubmitField('Submit')
