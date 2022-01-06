@@ -10,13 +10,13 @@
   </head>
   <body>
     <div>Microblog:
-      <a href="{{ url_for('index') }}">Home | </a>
-      <a href="{{ url_for('explore') }}">Explore | </a>
+      <a href="{{ url_for('index') }}">Home</a><p> | </p>
+      <a href="{{ url_for('explore') }}">Explore</a><p> | </p>
       {% if current_user.is_anonymous %}
-          <a href="{{ url_for('login') }}">Login | </a>
+          <a href="{{ url_for('login') }}">Login</a><p> | </p>
       {% else %}
           <a href="{{ url_for('user', username=current_user.username) }}">Profile | </a>
-          <a href="{{ url_for('logout') }}">Logout | </a>
+          <a href="{{ url_for('logout') }}">Logout</a><p> | </p>
       {% endif %}
     </div>
     <hr>
