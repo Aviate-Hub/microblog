@@ -88,14 +88,16 @@ def register():
 @app.route('/user/<username>')
 @login_required
 def user(username):
-	form = EmptyForm()
 	user = User.query.filter_by(username=username).first_or_404()
-	posts = [
-		{'author': user, 'body': 'Microblog Test post #1'},
-		{'author': user, 'body': 'Microblog Test post #2'},
-		{'author': user, 'body': 'Microblog Test post #3'}
-	]
-	return render_template('user.html', user=user, posts=posts, form=form)
+	page = request.args.get('page', 1, type=int)
+	posts = user.posts.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+	next_url = url_for('user', username=user.username, page=posts.next_num) \
+		if posts.has_next else None
+	prev_url = url_for('user', username=user.username, page=posts.prev_num) \
+		if posts.has_prev else None
+	form = EmptyForm()
+	return render_template('user.html', user=user, posts=posts.items,
+						next_url=next_url, prev_url=prev_url, form=form)
 
 
 # Record time of users last visit
