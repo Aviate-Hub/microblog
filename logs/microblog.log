@@ -74,3 +74,4 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2022-01-05 17:56:36,601 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
 2022-01-05 17:57:05,354 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
 2022-01-06 13:46:31,666 INFO: Microblog startup [in /home/nitesh/microblog/app/__init__.py:51]
+2022-01-10 14:49:12,552 INFO: Microblog startup [in /Users/NiteshiMac/github/microblog/app/__init__.py:55]

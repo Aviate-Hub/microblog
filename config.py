@@ -24,4 +24,4 @@ class Config(object):
     ADMINS = ['niteshd@me.com']
 
     # Post per page configuration
-    POSTS_PER_PAGE = 25
+    POSTS_PER_PAGE = 5
